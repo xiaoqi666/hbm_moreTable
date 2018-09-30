@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.xiaoqi.domain.CstLinkmanEntity" table="cst_linkman" schema="xiaoqi">
+        <id name="lkmId">
+            <column name="lkm_id" sql-type="bigint(32)"/>
+            <generator class="increment" />
+        </id>
+        <property name="lkmName">
+            <column name="lkm_name" sql-type="varchar(16)" length="16" not-null="true"/>
+        </property>
+        <property name="lkmGender">
+            <column name="lkm_gender" sql-type="char(1)" length="1" not-null="true"/>
+        </property>
+        <property name="lkmPhone">
+            <column name="lkm_phone" sql-type="varchar(16)" length="16" not-null="true"/>
+        </property>
+        <property name="lkmMobile">
+            <column name="lkm_mobile" sql-type="varchar(16)" length="16" not-null="true"/>
+        </property>
+        <property name="lkmEmail">
+            <column name="lkm_email" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="lkmQq">
+            <column name="lkm_qq" sql-type="varchar(16)" length="16" not-null="true"/>
+        </property>
+        <property name="lkmPosition">
+            <column name="lkm_position" sql-type="varchar(16)" length="16" not-null="true"/>
+        </property>
+        <property name="lkmMemo">
+            <column name="lkm_memo" sql-type="varchar(512)" length="512" not-null="true"/>
+        </property>
+
+
+        <!-- 多对一关系在配置文件中配置 -->
+        <many-to-one name="customerEntity" column="lkm_cust_id" class="com.xiaoqi.domain.CustomerEntity"/>
+
+
+    </class>
+</hibernate-mapping>
