@@ -36,7 +36,8 @@
 
 
         <!-- 多对一关系在配置文件中配置 -->
-        <many-to-one name="customerEntity" column="lkm_cust_id" class="com.xiaoqi.domain.CustomerEntity"/>
+        <many-to-one name="customerEntity" column="lkm_cust_id"
+                     class="com.xiaoqi.domain.CustomerEntity"/>
 
 
     </class>

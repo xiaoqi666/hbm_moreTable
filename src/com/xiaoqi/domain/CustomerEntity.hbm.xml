@@ -7,7 +7,7 @@
     <class name="com.xiaoqi.domain.CustomerEntity" table="customer" schema="xiaoqi">
         <id name="custId">
             <column name="cust_id" sql-type="bigint(32)"/>
-            <generator class="increment" />
+            <generator class="increment"/>
         </id>
         <property name="custName">
             <column name="cust_name" sql-type="varchar(32)" length="32"/>
@@ -33,12 +33,19 @@
 
         <!-- 集合:一对多关系,在配置文件中配置 集合-->
         <!--
-            name:集合属性名 (CustomerEntity类中的private Set<CstLinkmanEntity> linksmans对象名)
+           name:集合属性名 (CustomerEntity类中的private Set<CstLinkmanEntity> linksmans对象名)
            column: 外键列名
            class属性:与外键关联的对象的完整类名
         -->
 
-        <set name="linksmans" inverse="true" cascade="delete">
+        <!--
+            级联操作:cascade
+                save-update:级联保存
+                delete:级联删除
+                all:update+delete
+        -->
+
+        <set name="linksmans" inverse="true" cascade="all">
             <key column="lkm_cust_id"></key>
             <!--  指明一对多,set可以是多对多  -->
             <one-to-many class="com.xiaoqi.domain.CstLinkmanEntity"/>
