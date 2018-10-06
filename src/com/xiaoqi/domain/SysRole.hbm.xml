@@ -17,7 +17,7 @@
         <property name="roleMemo">
             <column name="role_memo" sql-type="varchar(128)" length="128" not-null="true"/>
         </property>
-
+        <!-- nverse="true" 放弃维护关系 -->
         <set name="users" table="sys_user_role" inverse="true">
             <key column="role_id"></key>
             <many-to-many column="user_id" class="com.xiaoqi.domain.SysRole"></many-to-many>

@@ -30,7 +30,7 @@
         many-to-many  class:我与哪个类型是多对多关系
         many-to-many  column:我引用别人的外键列
         -->
-        <set name="roles" table="sys_user_role">
+        <set name="roles" table="sys_user_role" cascade="save-update">
             <key column="user_id"></key>
             <many-to-many column="role_id" class="com.xiaoqi.domain.SysRole"></many-to-many>
         </set>
