@@ -7,7 +7,7 @@
     <class name="com.xiaoqi.domain.CstLinkmanEntity" table="cst_linkman" schema="xiaoqi">
         <id name="lkmId">
             <column name="lkm_id" sql-type="bigint(32)"/>
-            <generator class="increment" />
+            <generator class="increment"/>
         </id>
         <property name="lkmName">
             <column name="lkm_name" sql-type="varchar(16)" length="16" not-null="true"/>

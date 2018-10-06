@@ -45,7 +45,17 @@
                 all:update+delete
         -->
 
-        <set name="linksmans" inverse="true" cascade="all">
+        <!--
+            inverse属性:配置关系是否维护
+                默认情况下,一对多中多会维护关系,浪费性能
+                true:Customer不维护关系
+                false:维护关系,默认为false
+             作用:性能优化,提高关系维护的性能
+             原则:无论怎么放弃,总有一方必须要维护关系
+             一对多关系:一的一方放弃,也只能是一的一方放弃
+        -->
+
+        <set name="linksmans" inverse="true" cascade="save-update">
             <key column="lkm_cust_id"></key>
             <!--  指明一对多,set可以是多对多  -->
             <one-to-many class="com.xiaoqi.domain.CstLinkmanEntity"/>

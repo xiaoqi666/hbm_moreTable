@@ -9,6 +9,7 @@
         <property name="connection.username">root</property>
         <property name="connection.password">123456</property>
         <property name="hbm2ddl.auto">update</property>
+        <!-- 设置数据库方言 -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <!-- 设置编码方式为utf-8 -->
         <property name="connection.characterEncoding">utf-8</property>
@@ -16,5 +17,9 @@
         <mapping resource="com/xiaoqi/domain/CstLinkmanEntity.hbm.xml"/>
         <mapping class="com.xiaoqi.domain.CustomerEntity"/>
         <mapping resource="com/xiaoqi/domain/CustomerEntity.hbm.xml"/>
+        <mapping resource="com/xiaoqi/domain/SysUserEntity.hbm.xml"/>
+        <mapping class="com.xiaoqi.domain.SysUserEntity"/>
+        <mapping resource="com/xiaoqi/domain/SysRole.hbm.xml"/>
+        <mapping class="com.xiaoqi.domain.SysRole"/>
     </session-factory>
 </hibernate-configuration>
